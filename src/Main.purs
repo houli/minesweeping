@@ -40,7 +40,7 @@ collectSums matrix x y mine = case mine of
   Safe -> Count <<< sum <<< map detectMine $ adjacentPositions x y
   where
     detectMine :: Tuple Int Int -> Int
-    detectMine (Tuple x y) = case get x y matrix of
+    detectMine (Tuple xx yy) = case get xx yy matrix of
       Just Boom -> 1
       _ -> 0
 
